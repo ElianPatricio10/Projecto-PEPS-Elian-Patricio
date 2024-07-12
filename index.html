@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Stock PEPS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Control de Stock PEPS Elian-Patricio</h1>
+
+        <div class="input-section">
+            <h2>Entrada de Stock</h2>
+            <form id="add-stock-form">
+                <label for="quantity">Cantidad:</label>
+                <input type="number" id="quantity" required>
+                <label for="price">Precio:</label>
+                <input type="number" id="price" required>
+                <button type="submit">Agregar Stock</button>
+            </form>
+        </div>
+
+        <div class="output-section">
+            <h2>Salida de Stock</h2>
+            <form id="remove-stock-form">
+                <label for="remove-id">ID:</label>
+                <select id="remove-id" required></select>
+                <label for="remove-quantity">Cantidad:</label>
+                <input type="number" id="remove-quantity" required>
+                <button type="submit">Eliminar Stock</button>
+            </form>
+        </div>
+
+        <div class="stock-list">
+            <h2>Inventario Actual</h2>
+            <button id="search-stock">Buscar</button>
+            <ul id="stock-list"></ul>
+            <div id="current-stock"></div>
+        </div>
+
+        <div class="summary-section">
+            <h2>Mostrar Resumen</h2>
+            <label for="summary-id">ID:</label>
+            <select id="summary-id" required></select>
+            <button id="show-summary">Mostrar Resumen</button>
+        </div>
+
+        <div class="day-stock-section">
+            <h2>Stock por Día de la Semana</h2>
+            <label for="day-select">Seleccione el día:</label>
+            <select id="day-select">
+                <option value="Lunes">Lunes</option>
+                <option value="Martes">Martes</option>
+                <option value="Miércoles">Miércoles</option>
+                <option value="Jueves">Jueves</option>
+                <option value="Viernes">Viernes</option>
+            </select>
+            <button id="show-day-stock">Mostrar Stock</button>
+            <div id="day-stock"></div>
+        </div>
+
+        <div id="summary-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Resumen de Stock</h2>
+                <div id="summary-content"></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
